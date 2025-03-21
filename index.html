@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Cathy | Authentic Filipino Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: {
+                            light: '#9C27B0',
+                            DEFAULT: '#7B1FA2',
+                            dark: '#6A1B9A'
+                        },
+                        secondary: '#333333',
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'purple-gradient': 'linear-gradient(to right, #9C27B0, #6A1B9A)',
+                    },
+                    spacing: {
+                        '72': '18rem',
+                        '84': '21rem',
+                        '96': '24rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins text-gray-800 bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 transition-all duration-300 shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8 py-3 md:py-4 flex justify-between items-center">
+            <div class="logo">
+                <h1 class="text-white font-playfair text-xl md:text-2xl lg:text-3xl font-bold">Ms Cathy</h1>
+            </div>
+            <nav>
+                <div class="menu-toggle md:hidden cursor-pointer flex flex-col">
+                    <span class="w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+                    <span class="w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+                    <span class="w-6 h-0.5 bg-white transition-all"></span>
+                </div>
+                <ul class="nav-links hidden md:flex">
+                    <li class="ml-6 lg:ml-10"><a href="#home" class="nav-item text-white font-medium hover:text-purple-light transition-colors relative py-2"><i class="fas fa-home mr-1"></i> Home</a></li>
+                    <li class="ml-6 lg:ml-10"><a href="#about" class="nav-item text-white font-medium hover:text-purple-light transition-colors relative py-2"><i class="fas fa-info-circle mr-1"></i> About</a></li>
+                    <li class="ml-6 lg:ml-10"><a href="#menu" class="nav-item text-white font-medium hover:text-purple-light transition-colors relative py-2"><i class="fas fa-utensils mr-1"></i> Menu</a></li>
+                    <li class="ml-6 lg:ml-10"><a href="#testimonials" class="nav-item text-white font-medium hover:text-purple-light transition-colors relative py-2"><i class="fas fa-comment mr-1"></i> Testimonials</a></li>
+                    <li class="ml-6 lg:ml-10"><a href="#contact" class="nav-item text-white font-medium hover:text-purple-light transition-colors relative py-2"><i class="fas fa-phone mr-1"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden bg-black bg-opacity-95 w-full py-4 px-4 md:hidden">
+            <ul class="flex flex-col items-center space-y-3">
+                <li class="py-2 w-full text-center"><a href="#home" class="text-white font-medium text-base hover:text-purple-light transition-colors"><i class="fas fa-home mr-2"></i> Home</a></li>
+                <li class="py-2 w-full text-center"><a href="#about" class="text-white font-medium text-base hover:text-purple-light transition-colors"><i class="fas fa-info-circle mr-2"></i> About</a></li>
+                <li class="py-2 w-full text-center"><a href="#menu" class="text-white font-medium text-base hover:text-purple-light transition-colors"><i class="fas fa-utensils mr-2"></i> Menu</a></li>
+                <li class="py-2 w-full text-center"><a href="#testimonials" class="text-white font-medium text-base hover:text-purple-light transition-colors"><i class="fas fa-comment mr-2"></i> Testimonials</a></li>
+                <li class="py-2 w-full text-center"><a href="#contact" class="text-white font-medium text-base hover:text-purple-light transition-colors"><i class="fas fa-phone mr-2"></i> Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-hero h-screen flex items-center justify-center text-center text-white px-4 sm:px-6 md:px-8">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold mb-4 sm:mb-6 leading-tight">Authentic Filipino Cuisine</h1>
+            <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed">Experience the rich flavors and traditions of the Philippines</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                <a href="#menu" class="bg-purple-gradient hover:opacity-90 text-white font-medium py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base"><i class="fas fa-utensils mr-2"></i>View Menu</a>
+                <a href="#contact" class="border-2 border-white hover:bg-white hover:text-secondary text-white font-medium py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base"><i class="fas fa-calendar-alt mr-2"></i>Reserve Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-secondary mb-3 sm:mb-4">Our Story</h2>
+                <div class="h-1 w-16 sm:w-20 md:w-24 bg-purple-gradient mx-auto"></div>
+                <p class="mt-4 sm:mt-6 text-sm sm:text-base text-gray-600 max-w-3xl mx-auto">Bringing the authentic taste of Filipino cuisine to your table since 2005</p>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
+                <div class="lg:w-1/2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurant interior" class="w-full h-auto transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-secondary mb-4 sm:mb-6">A Taste of the Philippines Since 2005</h3>
+                    <p class="mb-4 sm:mb-6 text-sm sm:text-base text-gray-600 leading-relaxed">Founded by culinary expert Ms. Catherine "Cathy" Santos, our restaurant has been serving authentic Filipino cuisine for over 15 years. Our philosophy is simple: use the finest ingredients, prepare them with passion, and serve with the warmth of Filipino hospitality.</p>
+                    <p class="mb-4 sm:mb-8 text-sm sm:text-base text-gray-600 leading-relaxed">Every dish tells a story of tradition, family recipes, and Ms. Cathy's dedication to sharing Filipino culinary excellence. We source our ingredients locally whenever possible, while importing specialty items directly from the Philippines to ensure authentic flavors.</p>
+                    <p class="mb-4 sm:mb-8 text-sm sm:text-base text-gray-600 leading-relaxed">Ms. Cathy learned her cooking skills from her grandmother in Pampanga, a province known as the culinary capital of the Philippines. Her journey from home cook to restaurateur is a testament to her passion for Filipino food and culture.</p>
+                    <a href="#" class="text-purple-light hover:underline font-medium inline-flex items-center group text-sm sm:text-base"><span>Learn More About Us</span> <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 sm:py-20 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-secondary mb-3 sm:mb-4">Our Menu</h2>
+                <div class="h-1 w-16 sm:w-20 md:w-24 bg-purple-gradient mx-auto"></div>
+                <p class="mt-4 sm:mt-6 text-sm sm:text-base max-w-3xl mx-auto text-gray-600">Discover the authentic flavors of the Philippines with our carefully crafted menu featuring traditional favorites and modern interpretations.</p>
+            </div>
+            <div class="flex flex-wrap justify-center mb-10 sm:mb-16" data-aos="fade-up" data-aos-delay="200">
+                <button class="tab-btn active mx-2 sm:mx-3 mb-3 sm:mb-4 px-4 sm:px-6 py-2 sm:py-3 focus:outline-none border-b-2 border-transparent hover:border-purple-light hover:text-purple-light transition-all text-sm sm:text-base md:text-lg" data-category="all">All</button>
+                <button class="tab-btn mx-2 sm:mx-3 mb-3 sm:mb-4 px-4 sm:px-6 py-2 sm:py-3 focus:outline-none border-b-2 border-transparent hover:border-purple-light hover:text-purple-light transition-all text-sm sm:text-base md:text-lg" data-category="mains">Main Dishes</button>
+                <button class="tab-btn mx-2 sm:mx-3 mb-3 sm:mb-4 px-4 sm:px-6 py-2 sm:py-3 focus:outline-none border-b-2 border-transparent hover:border-purple-light hover:text-purple-light transition-all text-sm sm:text-base md:text-lg" data-category="desserts">Desserts</button>
+                <button class="tab-btn mx-2 sm:mx-3 mb-3 sm:mb-4 px-4 sm:px-6 py-2 sm:py-3 focus:outline-none border-b-2 border-transparent hover:border-purple-light hover:text-purple-light transition-all text-sm sm:text-base md:text-lg" data-category="drinks">Drinks</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 mb-10 sm:mb-16">
+                <!-- Main Dishes -->
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="mains" data-aos="fade-up" data-aos-delay="100" data-id="1" data-name="Chicken Adobo" data-price="280">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chicken Adobo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Chicken Adobo</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱280</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Tender chicken marinated in vinegar, soy sauce, and garlic, served with steamed rice. Our national dish!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="mains" data-aos="fade-up" data-aos-delay="200" data-id="2" data-name="Pork Sinigang" data-price="320">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sinigang" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Pork Sinigang</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱320</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Sour tamarind soup with tender pork, vegetables, and served with steamed rice. Perfect for rainy days!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="mains" data-aos="fade-up" data-aos-delay="300" data-id="3" data-name="Lechon Kawali" data-price="350">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chicken Adobo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Lechon Kawali</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱350</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Crispy deep-fried pork belly served with liver sauce and steamed rice. Crunchy outside, tender inside!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="mains" data-aos="fade-up" data-aos-delay="400" data-id="4" data-name="Pancit Canton" data-price="250">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519624014191-508652cbd7b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pancit" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Pancit Canton</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱250</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Stir-fried egg noodles with vegetables, shrimp, and chicken. A celebration staple for long life!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="mains" data-aos="fade-up" data-aos-delay="500" data-id="5" data-name="Kare Kare" data-price="380">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1535400875775-0269e7a919af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kare Kare" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Kare Kare</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱380</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Oxtail and vegetables in rich peanut sauce, served with bagoong (shrimp paste) and rice. A royal feast!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="mains" data-aos="fade-up" data-aos-delay="600" data-id="6" data-name="Sizzling Sisig" data-price="290">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sisig" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Sizzling Sisig</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱290</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Chopped pig's face and ears with chili, calamansi, and egg on a sizzling plate. Perfect with cold beer!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="desserts" data-aos="fade-up" data-aos-delay="100" data-id="7" data-name="Halo-halo Special" data-price="180">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Halo-halo" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Halo-halo Special</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱180</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Mixed sweet beans, fruits, jellies, and flan with shaved ice and ube ice cream. Our colorful summer treat!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="desserts" data-aos="fade-up" data-aos-delay="200" data-id="8" data-name="Leche Flan" data-price="120">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601409751311-cbecfe223af4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Leche Flan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Leche Flan</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱120</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Creamy caramel custard made with egg yolks and condensed milk. Ms. Cathy's grandmother's secret recipe!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="desserts" data-aos="fade-up" data-aos-delay="300" data-id="9" data-name="Bibingka" data-price="150">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibingka" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Bibingka</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱150</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Traditional rice cake topped with salted egg, cheese, and grated coconut. A Christmas season favorite!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                
+                <!-- Drinks -->
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="drinks" data-aos="fade-up" data-aos-delay="100" data-id="10" data-name="Fresh Calamansi Juice" data-price="90">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Calamansi Juice" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Fresh Calamansi Juice</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱90</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Refreshing citrus juice made from fresh Philippine calamansi. Nature's vitamin C boost!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="drinks" data-aos="fade-up" data-aos-delay="200" data-id="11" data-name="Sago't Gulaman" data-price="100">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sago't Gulaman" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Sago't Gulaman</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱100</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Sweet drink with tapioca pearls and gelatin, flavored with banana essence. A Filipino street food classic!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+                <div class="menu-item bg-white rounded-xl overflow-hidden shadow-lg" data-category="drinks" data-aos="fade-up" data-aos-delay="300" data-id="12" data-name="Fresh Buko Juice" data-price="110">
+                    <div class="h-48 sm:h-56 md:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Buko Juice" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-4 sm:p-6 md:p-8">
+                        <div class="flex justify-between items-center mb-3 sm:mb-4">
+                            <h3 class="text-lg sm:text-xl font-playfair font-bold">Fresh Buko Juice</h3>
+                            <span class="text-purple-light font-semibold text-base sm:text-lg">₱110</span>
+                        </div>
+                        <p class="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">Young coconut water with coconut meat, served chilled. Nature's hydrating drink from our tropical islands!</p>
+                        <button class="add-to-cart-btn w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm"><i class="fas fa-plus mr-2"></i>Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" data-aos="fade-up">
+                <button id="viewCartBtn" class="bg-purple-gradient hover:opacity-90 text-white font-medium py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all inline-block shadow-lg transform hover:scale-105 relative text-sm sm:text-base">
+                    <i class="fas fa-shopping-cart mr-2"></i>View Order
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-white text-purple-dark w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold shadow-md">0</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 sm:py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-secondary mb-3 sm:mb-4">What Our Guests Say</h2>
+                <div class="h-1 w-16 sm:w-20 md:w-24 bg-purple-gradient mx-auto"></div>
+                <p class="mt-4 sm:mt-6 text-sm sm:text-base max-w-3xl mx-auto text-gray-600">Don't just take our word for it - hear what our valued customers have to say about their dining experience at Ms Cathy's.</p>
+            </div>
+            <div class="max-w-5xl mx-auto">
+                <div class="testimonial-slider relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-container h-auto sm:h-auto relative overflow-hidden">
+                        <div class="testimonial absolute w-full h-full opacity-0 transform translate-x-12 transition-all duration-500 ease-out">
+                            <div class="bg-gray-50 p-6 sm:p-8 md:p-10 rounded-xl shadow-lg relative">
+                                <div class="text-5xl sm:text-6xl md:text-7xl text-purple-light opacity-20 absolute top-2 left-4 font-playfair">"</div>
+                                <p class="text-gray-600 italic mb-6 sm:mb-8 relative z-10 text-sm sm:text-base md:text-lg leading-relaxed">The best Filipino food I've had outside of the Philippines! Ms Cathy's Adobo reminds me of my grandmother's cooking. The flavors are authentic and the service is warm and friendly.</p>
+                                <div class="flex items-center">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full mr-3 sm:mr-4 object-cover border-2 border-purple-light">
+                                    <div>
+                                        <h4 class="font-bold text-base sm:text-lg">Maria Santos</h4>
+                                        <span class="text-xs sm:text-sm text-gray-500">Regular Customer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial absolute w-full h-full opacity-0 transform translate-x-12 transition-all duration-500 ease-out">
+                            <div class="bg-gray-50 p-6 sm:p-8 md:p-10 rounded-xl shadow-lg relative">
+                                <div class="text-5xl sm:text-6xl md:text-7xl text-purple-light opacity-20 absolute top-2 left-4 font-playfair">"</div>
+                                <p class="text-gray-600 italic mb-6 sm:mb-8 relative z-10 text-sm sm:text-base md:text-lg leading-relaxed">Ms Cathy's has become our family's favorite restaurant for celebrations. The Lechon Kawali is crispy perfection, and the Halo-halo is the best in town. We always feel at home here.</p>
+                                <div class="flex items-center">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full mr-3 sm:mr-4 object-cover border-2 border-purple-light">
+                                    <div>
+                                        <h4 class="font-bold text-base sm:text-lg">Juan & Ana Reyes</h4>
+                                        <span class="text-xs sm:text-sm text-gray-500">Weekly Visitors</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial absolute w-full h-full opacity-0 transform translate-x-12 transition-all duration-500 ease-out">
+                            <div class="bg-gray-50 p-6 sm:p-8 md:p-10 rounded-xl shadow-lg relative">
+                                <div class="text-5xl sm:text-6xl md:text-7xl text-purple-light opacity-20 absolute top-2 left-4 font-playfair">"</div>
+                                <p class="text-gray-600 italic mb-6 sm:mb-8 relative z-10 text-sm sm:text-base md:text-lg leading-relaxed">As a food blogger, I've tried Filipino restaurants all over the country, and Ms Cathy's stands out for its authenticity and quality. The Sinigang has the perfect balance of sour and savory flavors.</p>
+                                <div class="flex items-center">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full mr-3 sm:mr-4 object-cover border-2 border-purple-light">
+                                    <div>
+                                        <h4 class="font-bold text-base sm:text-lg">Sofia Cruz</h4>
+                                        <span class="text-xs sm:text-sm text-gray-500">Food Blogger</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center mt-8 sm:mt-12">
+                        <button class="prev-btn text-2xl sm:text-3xl text-gray-600 hover:text-purple-light transition-colors focus:outline-none mx-3 sm:mx-4"><i class="fas fa-chevron-left"></i></button>
+                        <div class="mx-3 sm:mx-4 flex space-x-2 sm:space-x-3">
+                            <span class="dot w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gray-300 cursor-pointer transition-all hover:bg-purple-light" data-index="0"></span>
+                            <span class="dot w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gray-300 cursor-pointer transition-all hover:bg-purple-light" data-index="1"></span>
+                            <span class="dot w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gray-300 cursor-pointer transition-all hover:bg-purple-light" data-index="2"></span>
+                        </div>
+                        <button class="next-btn text-2xl sm:text-3xl text-gray-600 hover:text-purple-light transition-colors focus:outline-none mx-3 sm:mx-4"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Reservation Section -->
+    <section id="contact" class="py-16 sm:py-20 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+            <div class="text-center mb-12 sm:mb-16 md:mb-20" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-secondary mb-3 sm:mb-4">Make a Reservation</h2>
+                <div class="h-1 w-16 sm:w-20 md:w-24 bg-purple-gradient mx-auto"></div>
+                <p class="mt-4 sm:mt-6 text-sm sm:text-base max-w-3xl mx-auto text-gray-600">Reserve your table today and experience the authentic taste of Filipino cuisine at Ms Cathy's.</p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-8 sm:gap-12 lg:gap-16">
+                <div class="lg:w-1/2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-8 sm:mb-12">
+                        <h3 class="text-xl sm:text-2xl font-playfair font-bold text-secondary mb-4 sm:mb-6"><i class="far fa-clock mr-3 text-purple-light"></i>24 Hours Open</h3>
+                    </div>
+                    <div class="mb-8 sm:mb-12">
+                        <h3 class="text-xl sm:text-2xl font-playfair font-bold text-secondary mb-4 sm:mb-6"><i class="fas fa-map-marker-alt mr-3 text-purple-light"></i>Contact Us</h3>
+                        <div class="space-y-2 sm:space-y-3 text-gray-600 text-sm sm:text-base">
+                            <p class="flex items-start">
+                                <i class="fas fa-map-pin mr-3 mt-1 text-purple-light"></i>
+                                <span>123 Filipino Avenue, Bibiclat, Aliaga, Nueva Ecija</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-phone-alt mr-3 text-purple-light"></i>
+                                <span>(02) 8123-4567</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-envelope mr-3 text-purple-light"></i>
+                                <span>info@mscathy.com</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15376.26672211051!2d120.85894725072923!3d15.534555711119518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396d6697a38da4b%3A0x63407460fc1454f2!2sBibiclat%2C%20Aliaga%2C%20Nueva%20Ecija!5e0!3m2!1sen!2sph!4v1742550641232!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg">
+                        <form id="bookingForm" class="reservation-form">
+                            <div class="form-group mb-4 sm:mb-6 relative">
+                                <input type="text" id="name" name="name" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base" required placeholder=" ">
+                                <label for="name" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs sm:text-sm">Full Name</label>
+                            </div>
+                            <div class="form-group mb-4 sm:mb-6 relative">
+                                <input type="email" id="email" name="email" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base" required placeholder=" ">
+                                <label for="email" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs sm:text-sm">Email</label>
+                            </div>
+                            <div class="form-group mb-4 sm:mb-6 relative">
+                                <input type="tel" id="phone" name="phone" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base" required placeholder=" ">
+                                <label for="phone" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs sm:text-sm">Phone</label>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                                <div class="form-group relative">
+                                    <input type="date" id="date" name="date" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base" required placeholder=" ">
+                                    <label for="date" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs sm:text-sm">Date</label>
+                                </div>
+                                <div class="form-group relative">
+                                    <input type="time" id="time" name="time" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base" required placeholder=" ">
+                                    <label for="time" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs sm:text-sm">Time</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4 sm:mb-6 relative">
+                                <select id="guests" name="guests" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base" required>
+                                    <option value=""></option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7+">7+ People</option>
+                                </select>
+                                <label for="guests" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs sm:text-sm">Number of Guests</label>
+                            </div>
+                            <div class="form-group mb-6 sm:mb-8 relative">
+                                <textarea id="message" name="message" rows="3" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base" placeholder=" "></textarea>
+                                <label for="message" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs sm:text-sm">Special Requests</label>
+                            </div>
+                            <button type="submit" class="w-full bg-purple-gradient hover:opacity-90 text-white font-medium py-3 sm:py-4 px-4 sm:px-6 rounded-lg transition-all shadow-lg text-sm sm:text-base"><i class="fas fa-calendar-check mr-2"></i>Book Table</button>
+                        </form>
+                        <div id="formSuccess" class="form-success hidden text-center py-8 sm:py-12">
+                            <i class="fas fa-check-circle text-4xl sm:text-5xl md:text-6xl text-purple-light mb-4 sm:mb-6"></i>
+                            <h3 class="text-xl sm:text-2xl font-playfair font-bold text-purple-light mb-3 sm:mb-4">Thank You!</h3>
+                            <p class="text-sm sm:text-base text-gray-600">Your reservation request has been received. We'll contact you shortly to confirm your booking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-10 sm:py-14 md:py-20 bg-secondary text-white">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <!-- Icon with decorative element -->
+                <div class="inline-block mb-3 sm:mb-4">
+                    <span class="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-purple-light bg-opacity-20 mb-2">
+                        <i class="fas fa-envelope-open-text text-2xl sm:text-3xl text-white"></i>
+                    </span>
+                </div>
+                
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold mb-3 sm:mb-4">Subscribe to Our Newsletter</h2>
+                
+                <p class="mb-5 sm:mb-8 text-sm sm:text-base md:text-lg max-w-xl mx-auto text-gray-200">Stay updated with our latest menu items, special events, and exclusive offers from Ms Cathy's kitchen.</p>
+                
+                <form id="newsletterForm" class="flex flex-col sm:flex-row gap-3 sm:gap-0 max-w-md mx-auto">
+                    <div class="relative flex-grow">
+                        <input type="email" class="text-black w-full px-4 sm:px-5 py-3 sm:py-4 rounded-lg sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-sm sm:text-base border-2 border-transparent placeholder-gray-400" required placeholder="Your email address">
+                    </div>
+                    <button type="submit" class="bg-purple-gradient hover:opacity-90 text-white font-medium py-3 sm:py-4 px-5 sm:px-6 rounded-lg sm:rounded-l-none transition-all shadow-lg text-sm sm:text-base border-2 border-transparent hover:scale-105 transform duration-200">
+                        <i class="fas fa-paper-plane mr-2"></i>Subscribe
+                    </button>
+                </form>
+                
+                <!-- Social proof text -->
+                <p class="text-xs text-gray-300 mt-4 sm:mt-5">Join over 2,000+ food lovers who receive our updates</p>
+                
+                <div id="newsletterSuccess" class="newsletter-success hidden mt-4 sm:mt-6 bg-white text-purple-light p-3 sm:p-4 rounded-lg max-w-md mx-auto shadow-lg">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2 text-lg"></i>
+                        <p class="font-medium text-sm sm:text-base">Thank you for subscribing to our newsletter!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-16">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="text-2xl sm:text-3xl font-playfair font-bold mb-4 sm:mb-6">Ms Cathy</h2>
+                    <p class="mb-4 sm:mb-6 text-xs sm:text-sm text-gray-400 leading-relaxed">Authentic Filipino cuisine since 2005. We bring the flavors of the Philippines to your table with love and tradition.</p>
+                    <div class="flex space-x-3 sm:space-x-4">
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 hover:bg-purple-light rounded-full flex items-center justify-center transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 hover:bg-purple-light rounded-full flex items-center justify-center transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 hover:bg-purple-light rounded-full flex items-center justify-center transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-gray-800 hover:bg-purple-light rounded-full flex items-center justify-center transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Quick Links</h3>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="#home" class="hover:text-purple-light transition-colors flex items-center text-xs sm:text-sm"><i class="fas fa-chevron-right mr-2 text-purple-light"></i>Home</a></li>
+                        <li><a href="#about" class="hover:text-purple-light transition-colors flex items-center text-xs sm:text-sm"><i class="fas fa-chevron-right mr-2 text-purple-light"></i>About</a></li>
+                        <li><a href="#menu" class="hover:text-purple-light transition-colors flex items-center text-xs sm:text-sm"><i class="fas fa-chevron-right mr-2 text-purple-light"></i>Menu</a></li>
+                        <li><a href="#contact" class="hover:text-purple-light transition-colors flex items-center text-xs sm:text-sm"><i class="fas fa-chevron-right mr-2 text-purple-light"></i>Reservations</a></li>
+                        <li><a href="#" class="hover:text-purple-light transition-colors flex items-center text-xs sm:text-sm"><i class="fas fa-chevron-right mr-2 text-purple-light"></i>Private Events</a></li>
+                        <li><a href="#" class="hover:text-purple-light transition-colors flex items-center text-xs sm:text-sm"><i class="fas fa-chevron-right mr-2 text-purple-light"></i>Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Contact Information</h3>
+                    <ul class="space-y-2 sm:space-y-3 text-gray-400 text-xs sm:text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1 text-purple-light"></i>
+                            <span>123 Filipino Avenue, Bibiclat, Aliaga, Nueva Ecija</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-purple-light"></i>
+                            <span>(02) 8123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-purple-light"></i>
+                            <span>info@mscathy.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="far fa-clock mr-3 text-purple-light"></i>
+                            <span>Open daily from 11:00 AM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-6 sm:pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-xs sm:text-sm">&copy; 2023 Ms Cathy Filipino Restaurant. All rights reserved.</p>
+                <div class="flex space-x-4 sm:space-x-8 mt-4 sm:mt-6 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-purple-light transition-colors text-xs sm:text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-purple-light transition-colors text-xs sm:text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 sm:bottom-8 right-6 sm:right-8 w-10 h-10 sm:w-14 sm:h-14 bg-purple-gradient text-white rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-lg cursor-pointer opacity-0 invisible transition-all hover:opacity-90 z-50"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content max-w-4xl">
+            <div class="flex justify-between items-center mb-4 sm:mb-6">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-secondary">Your Order</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <div id="cartContent">
+                <div class="cart-items-container mb-4 sm:mb-6">
+                    <div class="bg-gray-100 p-3 sm:p-4 rounded-lg mb-3 sm:mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-bold text-base sm:text-lg">Your Cart is Empty</h3>
+                        </div>
+                        <p class="text-gray-600 text-xs sm:text-sm">Add some delicious items from our menu to get started!</p>
+                    </div>
+                </div>
+                
+                <div id="cartItemsContainer" class="hidden">
+                    <div class="overflow-auto max-h-64 sm:max-h-96 mb-4 sm:mb-6">
+                        <table class="w-full">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="text-left p-2 sm:p-4 text-xs sm:text-sm">Item</th>
+                                    <th class="text-center p-2 sm:p-4 text-xs sm:text-sm">Quantity</th>
+                                    <th class="text-right p-2 sm:p-4 text-xs sm:text-sm">Price</th>
+                                    <th class="text-right p-2 sm:p-4 text-xs sm:text-sm">Subtotal</th>
+                                    <th class="text-center p-2 sm:p-4 text-xs sm:text-sm">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartItems">
+                                <!-- Cart items will be added here dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 pt-3 sm:pt-4 mb-4 sm:mb-6">
+                        <div class="flex justify-between mb-1 sm:mb-2 text-xs sm:text-sm">
+                            <span class="font-medium">Subtotal:</span>
+                            <span id="subtotal">₱0.00</span>
+                        </div>
+                        <div class="flex justify-between mb-1 sm:mb-2 text-xs sm:text-sm">
+                            <span class="font-medium">Service Charge (10%):</span>
+                            <span id="serviceCharge">₱0.00</span>
+                        </div>
+                        <div class="flex justify-between text-base sm:text-xl font-bold">
+                            <span>Total:</span>
+                            <span id="total">₱0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group mb-4 sm:mb-6 relative">
+                        <textarea id="orderNotes" rows="2" class="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-light focus:border-transparent transition-all text-xs sm:text-sm" placeholder=" "></textarea>
+                        <label for="orderNotes" class="absolute text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 text-xs">Special Instructions for Your Order</label>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <button id="continueShoppingBtn" class="flex-1 border border-purple-light text-purple-light hover:bg-purple-light hover:text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm">
+                            <i class="fas fa-arrow-left mr-2"></i>Continue Shopping
+                        </button>
+                        <button id="checkoutBtn" class="flex-1 bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-lg text-xs sm:text-sm">
+                            <i class="fas fa-shopping-cart mr-2"></i>Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="orderSuccess" class="hidden text-center py-6 sm:py-8">
+                <div class="bg-green-50 p-4 sm:p-6 rounded-lg">
+                    <i class="fas fa-check-circle text-4xl sm:text-5xl md:text-6xl text-green-500 mb-4 sm:mb-6"></i>
+                    <h3 class="text-xl sm:text-2xl font-bold text-green-600 mb-3 sm:mb-4">Order Placed Successfully!</h3>
+                    <p class="text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm">Thank you for your order. Your delicious Filipino food will be ready soon!</p>
+                    <div class="bg-white p-3 sm:p-4 rounded-lg border border-gray-200 mb-4 sm:mb-6">
+                        <p class="font-medium text-xs sm:text-sm">Order Reference: <span id="orderReference" class="text-purple-light">MS-CATHY-12345</span></p>
+                        <p class="text-xs text-gray-500">Please save this reference for pickup or delivery tracking</p>
+                    </div>
+                    <button id="closeOrderBtn" class="bg-purple-gradient hover:opacity-90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all shadow-md text-xs sm:text-sm">
+                        <i class="fas fa-home mr-2"></i>Return to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
